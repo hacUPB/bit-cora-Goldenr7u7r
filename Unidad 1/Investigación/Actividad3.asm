@@ -8,7 +8,7 @@ M=D
 D=M     //almacena en D la posición de la tecla presionada
 @KEYPRESSED
 D;JNE       //Si D no es igual a cero, salte a esta dirección de memoria (KEYPRESSED)
-@i
+@i      
 D=M
 @SCREEN
 D=D-A
