@@ -14,3 +14,11 @@ Es este valor porque se indicó con la instrucción
 @16
 
 M=D
+
+- ¿Qué instrucciones se ejecutan en cada ciclo Fetch-Decode-Execute?
+
+1. Fetch, la CPU obtiene una instrucción desde la memoria ROM
+2. Decode, la CPU interpreta la instrucción que acaba de leer
+3. Execute, la CPU realiza la operación indicada
+
+-  ¿Qué cambios observas en el contenido de la memoria y los registros?
