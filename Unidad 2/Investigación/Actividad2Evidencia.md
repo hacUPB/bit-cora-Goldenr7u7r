@@ -1,1 +1,1 @@
-![alt text](bb8e78f3-9981-4523-b9f0-be928f5a3c4b.jpg)
+![alt text](../Imagenes/bb8e78f3-9981-4523-b9f0-be928f5a3c4b.jpg)
