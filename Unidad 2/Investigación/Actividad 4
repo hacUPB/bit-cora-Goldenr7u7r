@@ -1,0 +1,50 @@
+# Actividad 4 
+
+1. Análisis de equivalencia entre while y for
+
+El programa original con while y el programa con for realizan exactamente la misma operación: calcular la suma de los números del 1 al 100.
+
+Ambos programas:
+	•	Inicializan las variables con i = 1 y sum = 0.
+	•	Evalúan la condición i <= 100.
+	•	Si la condición se cumple, ejecutan el cuerpo del ciclo.
+	•	Dentro del ciclo suman el valor de i a sum.
+	•	Incrementan i en 1.
+	•	Terminan cuando i > 100.
+
+Por lo tanto, ambos son equivalentes porque producen el mismo resultado final.
+
+2. Conversión del ciclo for a ensamblador (Hack ASM)
+
+```
+// Adds 1 + ... + 100 using for
+
+@sum
+M=0            // sum = 0
+
+@i
+M=1            // i = 1
+
+(FOR_COND)
+@i
+D=M
+@100
+D=D-A
+@FOR_END
+D;JGT          // if i > 100, end
+
+@i
+D=M
+@sum
+M=M+D          // sum = sum + i
+
+@i
+M=M+1          // i++
+
+@FOR_COND
+0;JMP          // repeat loop
+
+(FOR_END)
+@FOR_END
+0;JMP          // infinite loop
+```
