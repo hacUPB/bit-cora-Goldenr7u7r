@@ -1,6 +1,6 @@
 # Actividad 2 
 
-### 1. Programa en ensamblador (Hack ASM)
+## 1. Programa en ensamblador (Hack ASM)
 
 ``` .js
 // Dibuja una línea horizontal negra de 16 pixeles en la esquina superior izquierda
@@ -16,7 +16,7 @@ M=-1           // Enciende los 16 pixeles del primer word (línea de 16 pixeles)
 0;JMP          // Bucle infinito para finalizar el programa
 ```
 
-### 2. Traducción a C++
+## 2. Traducción a C++
 
 ``` .js
 // Dibuja una línea horizontal negra de 16 pixeles en la esquina superior izquierda
@@ -36,7 +36,7 @@ int main() {
 }
 ```
 
-### 3. Simulación paso a paso (Predice – Ejecuta – Observa – Reflexiona)
+## 3. Simulación paso a paso (Predice – Ejecuta – Observa – Reflexiona)
 
 #### Paso 1
 - **Instrucción:** @16384
