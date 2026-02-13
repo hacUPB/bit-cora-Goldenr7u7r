@@ -1,4 +1,4 @@
-# Actividad 4 – Conversión de ciclo while a ciclo for
+# Actividad 4 
 
 ---
 
