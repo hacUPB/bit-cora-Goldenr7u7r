@@ -112,7 +112,7 @@ int* arrayHeap = crearArrayHeap(tamArray);
 
 - La constante global:
 
-```
+``` c++
 const char* const mensaje_ro = "Hola, memoria de solo lectura";
 ```
 
