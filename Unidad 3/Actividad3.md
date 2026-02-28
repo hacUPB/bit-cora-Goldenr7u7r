@@ -1,87 +1,11 @@
 # Actividad 3: Mapa de memoria de un programa escrito en C++
 
-```c++
-#include <iostream>
-#include <cstdlib>
-using namespace std;
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/dae269fd-5262-41fc-a790-a4215f9286c1" />
 
-// Variables globales
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/7d1cd33d-e7fd-497e-bccf-d90f2fb004b1" />
 
-int global_inicializada = 42;
-int global_no_inicializada;
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/e2f15a49-5d7a-411e-90c4-d972d15e1bda" />
 
-// Constante global
-
-const char* const mensaje_ro = "Hola, memoria de solo lectura";
-
-// Función de ejemplo que muestra la dirección de su variable local estática
-
-void funcionConStatic() 
-{
-    static int var_estatica = 100;
-    cout << "Dirección de var_estatica (static): " << &var_estatica << endl;
-}
-
-// Función que asigna memoria dinámica (heap)
-
-int* crearArrayHeap(int tam) 
-{
-    int* arr = new int[tam];
-
-    for (int i = 0; i < tam; i++) 
-    {
-        arr[i] = i;
-    }    return arr;
-}
-
-// Una función simple para representar el código (se encontrará en la región de código)
-
-int suma(int a, int b) 
-{
-    int c = a + b; // "c" es una variable local (stack)    
-    return c;
-}
-
-int main() 
-{
-    // Variable local (stack)   
- 
-    int a = 10;
-    int b = 20;
-    int c = suma(a, b);
-    cout << "Resultado de suma(a, b): " << c << endl;
-    cout << "Dirección de variable local 'a': " << &a << endl;
-    cout << "Dirección de variable local 'b': " << &b << endl;
-    cout << "Dirección de la variable local 'c' (resultado): " << &c << endl;
-
-    // Variables globales    
-
-    cout << "Dirección de 'global_inicializada': " << &global_inicializada << endl;
-    cout << "Dirección de 'global_no_inicializada': " << &global_no_inicializada << endl;
-
-    // Constante global (solo lectura)    
-
-    cout << "Dirección de 'mensaje_ro' (zona de solo lectura): " << static_cast<const void*>(mensaje_ro) << endl;
-
-    // Llamada a función que tiene variable estática    
-
-    funcionConStatic();
-
-    // Uso del Heap: asignación dinámica    
-
-    int tamArray = 10;
-    int* arrayHeap = crearArrayHeap(tamArray);
-
-    cout << "Dirección del primer elemento del array asignado en Heap: " << arrayHeap << endl;
-
-    for (int i = 0; i < tamArray; i++) 
-    {
-        cout << "arrayHeap[" << i << "] = " << arrayHeap[i] << " en " << (arrayHeap + i) << endl;
-    }
-    delete[] arrayHeap; // Liberamos la memoria dinámica
-    return 0;
-}
-```
 
 | Tipo de variable                   | Variable                                                  |
 | ---------------------------------- | --------------------------------------------------------- |
@@ -117,3 +41,15 @@ const char* const mensaje_ro = "Hola, memoria de solo lectura";
 ```
 
 Se almacena en la sección **segmento de código**
+
+**Explicación del mapa de memoria**
+
+Las variables globales y estáticas se almacenan en el segmento de datos, ya que existen durante toda la ejecución del programa. La variable *global_inicializada* se ubica en la sección de datos inicializados, mientras que *global_no_inicializada* se ubica en la sección de datos no inicializados (.bss). La variable *var_estatica*, aunque esté dentro de una función, también se almacena en el segmento de datos porque tiene duración estática.
+
+Las variables locales como *a*, *b*, *c*, *tamArray* y el puntero *arrayHeap* se almacenan en el stack, ya que solo existen mientras la función *main()* está en ejecución.
+
+La memoria reservada con *new* (el arreglo *arr*) se almacena en el heap, que es la región destinada a memoria dinámica y debe liberarse manualmente con *delete*.
+
+El literal *"Hola, memoria de solo lectura"* se almacena en la sección de solo lectura (.rodata), mientras que el puntero *mensaje_ro* se encuentra en el segmento de datos apuntando a esa dirección.
+
+Las funciones del programa se almacenan en el segmento de código (text segment), donde se ubican las instrucciones ejecutables.
