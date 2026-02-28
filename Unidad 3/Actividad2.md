@@ -1,3 +1,5 @@
+# Actividad 2: Paso por valor y paso por referencia
+
 <img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/5a77c60b-edd0-40ad-86d8-231ccfb1f018" /><img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/72598be7-d1af-494c-8c2c-bc7fda44a868" />
 
 - **Predicción**
