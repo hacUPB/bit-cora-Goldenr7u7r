@@ -1,3 +1,5 @@
+# Actividad 1: Hola mundo
+
 <img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/37fc60bf-ee6d-48ce-9055-6af70b75d2ff" />
 
 ## Reflexión final
