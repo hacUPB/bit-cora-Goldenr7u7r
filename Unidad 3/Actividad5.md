@@ -58,3 +58,7 @@ Por esta razón, al modificar los valores de copia, también se modifican los va
 - En C++, copia es un nuevo objeto creado a partir del original. Es una copia independiente que ocupa un espacio diferente en memoria. Modificar copia no altera el objeto original.
 
 - En C#, copia es una variable que contiene una referencia al mismo objeto que original. No es una copia independiente. Ambos nombres apuntan al mismo objeto en memoria, por lo que cualquier modificación afecta a los dos.
+
+##### Conclusión
+
+La principal diferencia observada es que en C++ la copia de un objeto genera una nueva instancia independiente (cuando se copia por valor), mientras que en C# la copia de una clase genera una nueva referencia al mismo objeto en memoria. Esto demuestra la diferencia fundamental entre tipos por valor y tipos por referencia en ambos lenguajes.
