@@ -2,62 +2,59 @@
 
 ### Experimento 1: modificar el segmento de texto:
 
-``` .c++
-#include <iostream>
-#include <cstdlib>
-using namespace std;
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/fe87be08-b943-4380-a80e-7de328a9bf87" />
 
-int main()
-    {    
-		// Variable local (stack)    
-		int a = 10;    
-		int b = 20;
-    /**********************************************************        
-    EXPERIMENTO 1    
-    ***********************************************************/
-    void* ptr = reinterpret_cast<void*>(&main);    
-    cout << "Voy a modificar la memoria en la dirección: " << ptr << endl;    
-    *reinterpret_cast<int*>(ptr) = 0;
-    /********************************************************/
-    return 0;
-    }
-```
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/ee515a6b-e8cf-468b-badb-d58ca98048a3" />
+
 - **¿Qué ocurre?**
-  
-Al ejecutar el programa, lo más común es que se produzca un crash justo cuando intenta hacer:
+
+Al ejecutar el programa se produce una excepción del tipo:
+
+**0xC0000005 — Infracción de acceso (Access Violation)**
+
+El error aparece cuando el programa intenta ejecutar la siguiente línea:
+
+``` c++
 *reinterpret_cast<int*>(ptr) = 0;
-En algunos casos raros puede no fallar de inmediato, pero aun así el resultado es impredecible.
+```
 
-- **¿Por qué?**
-  
-Porque ptr apunta a la dirección de main, es decir, al segmento de código (text segment) donde están las instrucciones del programa. En sistemas modernos ese segmento suele estar protegido como solo lectura y ejecutable (RX), por lo que no se permite escribir ahí. Al intentar escribir, el sistema operativo bloquea la operación y termina el programa.
+En ese momento el sistema detiene la ejecución porque se está intentando escribir en una dirección de memoria protegida.
 
-- Además, en C++ convertir un puntero a función (&main) a void* y luego tratarlo como int* para escribir en esa dirección implica comportamiento indefinido (no está garantizado por el estándar), así que aunque “parezca funcionar” en alguna máquina, no es portable ni seguro.
-  
+- **¿Por qué ocurre?**
+
+En el programa se obtiene la dirección de la función main mediante:
+
+``` c++
+void* ptr = reinterpret_cast<void*>(&main);
+```
+
+Las funciones del programa se almacenan en el segmento de código (text segment) de la memoria. Esta región contiene las instrucciones ejecutables compiladas.
+
+El segmento de código tiene permisos de:
+
+- Lectura
+
+- Ejecución
+
+Pero no permite escritura.
+
+Cuando se realiza:
+
+``` c++
+*reinterpret_cast<int*>(ptr) = 0;
+```
+
+Se está forzando la dirección de la función *main* a comportarse como si fuera un puntero a entero y luego se intenta escribir un valor en esa dirección. Sin embargo, esa dirección pertenece a una región protegida del sistema.
+
+El sistema operativo detecta el intento de escritura en una zona no autorizada y genera la excepción de infracción de acceso.
+
+- **Conclusión**
+
+La excepción se produce porque se intenta modificar una región de memoria protegida que corresponde al código ejecutable del programa. Esto confirma que el segmento de código solo permite lectura y ejecución, garantizando la integridad y seguridad del programa durante su ejecución.
+
 ### Experimento 2: modificar el segmento de datos (constante global):
 
-``` .c++
-#include <iostream>
-#include <cstdlib>
-using namespace std;
-// Constante global
-const char* const mensaje_ro = "Hola, memoria de solo lectura";
-
-int main() {    
-		// Variable local (stack)    
-		int a = 10;    
-		int b = 20;
-
-    /**********************************************************        
-    EXPERIMENTO 2    
-    ***********************************************************/
-    char* ptr = (char*)&mensaje_ro;    
-    cout << "Voy a modificar la memoria en la dirección: " << ptr << endl;    
-    *ptr = 0;
-    /********************************************************/
-    return 0;
-    }
-```
+<img width="1918" height="1079" alt="image" src="https://github.com/user-attachments/assets/058d9969-18bb-4d72-80b2-b372c212a231" />
 
 - **¿Qué ocurre?**
   
