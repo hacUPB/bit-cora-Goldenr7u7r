@@ -249,3 +249,7 @@ int main( ){
     ofRunMainLoopO);
 }
 ```
+
+**Video ejecución del código**
+
+https://youtu.be/43ofuc-Yqds?si=zEzyDD_zetdXKpJC
