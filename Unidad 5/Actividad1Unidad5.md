@@ -4,6 +4,8 @@
 
 **1. ¿Qué es el encapsulamiento para ti? Describe una situación en la que te haya sido útil o donde hayas visto su importancia.**
 
+El encapsulamiento es uno de los cuatro pilares de la programación orientada a objetos, se
+
 **2. ¿Qué es la herencia? ¿Por qué un programador decidiría usarla? Da un ejemplo simple.**
 
 **3. ¿Qué es el polimorfismo? Describe con tus palabras qué significa que un código sea “polimórfico”.**
