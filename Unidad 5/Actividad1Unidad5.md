@@ -2,17 +2,17 @@
 
 ### Parte 1: recordando los conceptos (en C#)
 
-**1. ¿Qué es el encapsulamiento para ti? Describe una situación en la que te haya sido útil o donde hayas visto su importancia.**
+- **1. ¿Qué es el encapsulamiento para ti? Describe una situación en la que te haya sido útil o donde hayas visto su importancia.**
 
 El encapsulamiento es uno de los cuatro pilares de la programación orientada a objetos, oculta los atributos de un objeto, sólo es posible acceder a ellos mediante métodos controlados.
 
 Por ejemplo, en una clase de cuenta bancaria, el saldo no debería ser público porque alguien podría ponerle un valor negativo o incoherente. Entonces se pone como privado y se crean métodos como depositar o retirar, donde se valida que las operaciones tengan sentido.
 
-**2. ¿Qué es la herencia? ¿Por qué un programador decidiría usarla? Da un ejemplo simple.**
+- **2. ¿Qué es la herencia? ¿Por qué un programador decidiría usarla? Da un ejemplo simple.**
 
 La herencia es uno de los cuatro pialres de la programación orientada a objetos, consiste en permitir que una clase (clase hija) adquiera los atributos y métodos de otra clase (clase padre). Es práctico usarla ya que permite reciclar código.
 
-**3. ¿Qué es el polimorfismo? Describe con tus palabras qué significa que un código sea “polimórfico”.**
+- **3. ¿Qué es el polimorfismo? Describe con tus palabras qué significa que un código sea “polimórfico”.**
 
 El polimorfirmo es uno de los cuatro pilares de la programación orientada a objetos, consiste en la capacidad de un método de adoptar diferentes comportamientos dependiendo del objeto que lo use.
 
