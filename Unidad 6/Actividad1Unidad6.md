@@ -17,6 +17,10 @@
 <img width="749" height="529" alt="image" src="https://github.com/user-attachments/assets/7de3e847-f0e6-4bd5-bf47-454ecfe2f67a" />
 
 3. Toma algunas capturas de pantalla de la aplicación en diferentes momentos (estado inicial, después de presionar ‘a’, ‘r’, ‘s’, ‘n’) y añádelas a tu bitácora.
+   
+- Estado incial
+  
+<img width="1018" height="798" alt="image" src="https://github.com/user-attachments/assets/76ed041f-40f1-457d-bb03-de091930c081" />
 
 - `S`
 
