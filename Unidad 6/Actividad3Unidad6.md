@@ -5,10 +5,16 @@
 1. **Identifica la Factory:**
 
     - ¿Qué clase actúa como la factory en este ejemplo?
+
+      La clase que actúa como factory en este caso es `ParticleFactory`
       
     - ¿Cuál es el “método factory” específico? ¿Es un método de instancia o estático?
-      
+  
+      El "método factory" es `Particle* createParticle(const std::string& type);`. Es un método estático       
+    
     - ¿Qué tipo de objeto devuelve este método fábrica?
+  
+      
       
 2. **Proceso de creación:**
    
