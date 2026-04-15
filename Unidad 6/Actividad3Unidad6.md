@@ -1,6 +1,6 @@
 # Actividad 3: Investiga el Patrón Factory Method
 
-### Análisis del caso de estudio
+## Análisis del caso de estudio
 
 1. **Identifica la Factory:**
 
