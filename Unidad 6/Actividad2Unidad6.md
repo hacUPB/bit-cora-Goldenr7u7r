@@ -44,8 +44,11 @@ Vuelve al código del caso de estudio (`ofApp.h` y `ofApp.cpp`).
 2. **Sigue el flujo de notificación:**
    
     - Localiza el método `keyPressed` en `ofApp.cpp`. ¿Qué sucede cuando se presiona la tecla ‘a’? ¿Qué método se llama?
+
       
     - Ve al método `notify` en la clase `Subject`. ¿Qué hace este método?
+
+      El método `notify` en la clase `Subject` se encarga de enviar un evento a todos los observadores registrados
       
     - Localiza el método que implementa la interfaz `Observer` en la clase `Particle` (`onNotify`). ¿Qué hace este método cuando recibe el evento “attract”?
       
