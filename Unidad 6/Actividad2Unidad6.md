@@ -8,8 +8,7 @@ Vuelve al código del caso de estudio (`ofApp.h` y `ofApp.cpp`).
    
     - ¿Qué clase actúa como la interfaz `Observer`? ¿Qué método define?
 
-      La clase que actúa como interfaz `Observer` es la clase `Observer`. Define el métodpo `onNotify(const std::string& event)`.
-      Es una interfaz abstracta porque tiene un método virtual puro (`= 0`), lo que obliga a las clases que heredan de ella a implementar este método para reaccionar a notificaciones.
+      La clase que actúa como interfaz `Observer` es la clase `Observer`. Define el método `onNotify(const std::string& event)`.
       
     - ¿Qué clase actúa como `Subject`? ¿Qué métodos proporciona para gestionar observadores y notificar?
 
@@ -48,12 +47,19 @@ Vuelve al código del caso de estudio (`ofApp.h` y `ofApp.cpp`).
       
     - Ve al método `notify` en la clase `Subject`. ¿Qué hace este método?
 
-      El método `notify` en la clase `Subject` se encarga de enviar un evento a todos los observadores registrados
+      El método `notify` en la clase `Subject` se encarga de enviar un evento a todos los observadores registrados.
       
     - Localiza el método que implementa la interfaz `Observer` en la clase `Particle` (`onNotify`). ¿Qué hace este método cuando recibe el evento “attract”?
       
 3. **Registro y eliminación de observadores:**
    
     - ¿En qué parte del código se añaden las instancias de `Particle` como observadores de `ofApp`? (Busca dónde se llama a `addObserver`).
-      
+
+      <img width="740" height="573" alt="image" src="https://github.com/user-attachments/assets/56b7166c-83a5-4d07-ad36-e05db155724c" />
+
+      Las instancias de `Particle` se añaden como observadores en el método `setup()` de la clase `ofApp.cpp`.
+
     - Aunque no se usa explícitamente en este ejemplo simple, ¿Dónde se eliminarían los observadores si fuera necesario (por ejemplo, si una partícula se destruyera durante la ejecución)? (Busca `removeObserver`). ¿Por qué es importante el destructor de `ofApp` en este contexto?
+  
+      <img width="368" height="218" alt="image" src="https://github.com/user-attachments/assets/e13be42f-06a1-42f2-96b2-190bc4cbe933" />
+
