@@ -38,8 +38,10 @@ Vuelve al código del caso de estudio (`ofApp.h` y `ofApp.cpp`).
       - La clase que recibe las notificaciones
      
       - La clase que reacciona a las notificaciones
-        
-3. **Sigue el flujo de notificación:**
+
+      La clase que actúa como `ConcreteObserver` es `Particle`, ya que hereda de la interfaz `Observer` e implementa el método `onNotify`. Esta clase recibe las notificaciones enviadas por el `Subject` y reacciona a ellas modificando su estado interno (por ejemplo, cambiando a `AttractState`, `RepelState`, `StopState` o `NormalState`). Por lo tanto, cumple el rol de observador concreto, ya que no solo recibe los eventos, sino que también cambia su comportamiento en función de estos.
+      
+2. **Sigue el flujo de notificación:**
    
     - Localiza el método `keyPressed` en `ofApp.cpp`. ¿Qué sucede cuando se presiona la tecla ‘a’? ¿Qué método se llama?
       
@@ -47,7 +49,7 @@ Vuelve al código del caso de estudio (`ofApp.h` y `ofApp.cpp`).
       
     - Localiza el método que implementa la interfaz `Observer` en la clase `Particle` (`onNotify`). ¿Qué hace este método cuando recibe el evento “attract”?
       
-5. **Registro y eliminación de observadores:**
+3. **Registro y eliminación de observadores:**
    
     - ¿En qué parte del código se añaden las instancias de `Particle` como observadores de `ofApp`? (Busca dónde se llama a `addObserver`).
       
