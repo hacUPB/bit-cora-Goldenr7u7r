@@ -44,12 +44,27 @@ Vuelve al código del caso de estudio (`ofApp.h` y `ofApp.cpp`).
    
     - Localiza el método `keyPressed` en `ofApp.cpp`. ¿Qué sucede cuando se presiona la tecla ‘a’? ¿Qué método se llama?
 
+      <img width="412" height="543" alt="image" src="https://github.com/user-attachments/assets/a0916682-383d-4380-b874-82bc866fca99" />
       
+      Cuando se presiona la tecla "a" se notifica el evento "attract" en el método `Particle::onNotify(const std::string& event)`.
+      
+      <img width="605" height="521" alt="image" src="https://github.com/user-attachments/assets/2cc529aa-0a24-4704-9405-ac2487c7205f" />
+      
+      Hace que la partícula cambie de estado.
+      
+      <img width="955" height="143" alt="image" src="https://github.com/user-attachments/assets/557a61c6-7593-46ab-841a-eda7fe6d93bf" />
+
     - Ve al método `notify` en la clase `Subject`. ¿Qué hace este método?
 
       El método `notify` en la clase `Subject` se encarga de enviar un evento a todos los observadores registrados.
       
     - Localiza el método que implementa la interfaz `Observer` en la clase `Particle` (`onNotify`). ¿Qué hace este método cuando recibe el evento “attract”?
+  
+      <img width="728" height="538" alt="image" src="https://github.com/user-attachments/assets/5867b4e5-5aae-4fcd-b4b6-201a6a5f9f12" />
+
+      Cuando el método recibe el evento "attract", cambia el estado de la partícula llamando a `setState(new AttractState())`
+
+      <img width="603" height="518" alt="image" src="https://github.com/user-attachments/assets/8f69d4bd-ae86-4511-a53f-fb5da41d57bf" />
       
 3. **Registro y eliminación de observadores:**
    
