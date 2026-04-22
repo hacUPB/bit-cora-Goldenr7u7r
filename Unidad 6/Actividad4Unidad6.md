@@ -5,6 +5,8 @@
 1. **Identifica los componentes:**
    
     - ¿Cuál es la clase `Context`? ¿Qué miembro utiliza para mantener el estado actual?
+  
+      La clase `Context` es `Particle`. Mantiene el estado actual mediante el miembro `State * state`.
       
     - ¿Cuál es la interfaz `State`? ¿Qué métodos importantes define? (Piensa en `update`, `onEnter`, `onExit`).
   
@@ -32,20 +34,26 @@
      
            <img width="519" height="207" alt="image" src="https://github.com/user-attachments/assets/ed78e4ac-5859-453f-af0d-726db9bc92ed" />
 
-
-
-
-
 1. **Delegación del comportamiento:**
    
     - Observa el método `Particle::update()`. ¿Cómo delega la lógica de actualización al estado actual?
+
+      En `Particle::update()`, la partícula no implementa directamente la lógica de movimiento, sino que llama a `state->update(this)`.
       
     - Compara el código dentro de `NormalState::update()`, `AttractState::update()`, `RepelState::update()` y `StopState::update()`. ¿Cómo encapsula cada clase un comportamiento diferente?
+  
+      Cada clase de estado implementa su propio método `update()` con una lógica distinta. `NormalState` mueve la partícula con su velocidad normal; `AttractState` la hace acercarse al mouse; `RepelState` la hace alejarse del mouse; y `StopState` reduce poco a poco su velocidad hasta detenerla.
       
 2. **Transiciones de estado:**
    
     - ¿Cómo cambia una `Particle` de un estado a otro? ¿Qué método es responsable de gestionar la transición? (Busca `setState`).
+
+      Una `Particle` cambia de estado cuando se llama al método `setState()`, que es el encargado de gestionar la transición entre el estado actual y el nuevo.
       
     - ¿Qué sucede dentro de `Particle::setState()`? ¿Por qué son importantes los métodos `onEnter` y `onExit` de la interfaz `State` (aunque no todos los estados concretos los usen extensivamente en este ejemplo)? ¿Qué gestionan `onEnter` y `onExit` en `NormalState`?
-      
+
+      Dentro de `setState()`, primero se ejecuta `onExit()` del estado anterior, luego ese estado se elimina, después se asigna el nuevo estado y finalmente se ejecuta `onEnter()` del nuevo estado. `onEnter` y `onExit` son importantes porque permiten preparar o limpiar lo necesario al cambiar de estado. En este ejemplo, en `NormalState`, `onEnter()` reasigna una velocidad aleatoria a la partícula.
+
     - ¿Qué evento externo (mediado por el patrón Observer, que ya analizaste) desencadena la llamada a `setState` en una `Particle`?
+  
+      La llamada a `setState()` se desencadena cuando la partícula recibe una notificación en `onNotify()`, a partir de un evento enviado por `notify()` desde `ofApp::keyPressed()`.
