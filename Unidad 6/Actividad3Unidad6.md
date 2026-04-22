@@ -6,15 +6,15 @@
 
     - ¿Qué clase actúa como la factory en este ejemplo?
 
-      La clase que actúa como factory en este caso es `ParticleFactory`
+      La clase que actúa como factory en este caso es `ParticleFactory`.
       
     - ¿Cuál es el “método factory” específico? ¿Es un método de instancia o estático?
   
-      El "método factory" es `Particle* createParticle(const std::string& type);`. Es un método estático       
+      El "método factory" es `Particle* createParticle(const std::string& type);`. Es un método estático.       
     
     - ¿Qué tipo de objeto devuelve este método fábrica?
   
-      
+      Este método fábrica devuelve un objeto de tipo `Particle`.
       
 2. **Proceso de creación:**
    
@@ -22,11 +22,15 @@
   
       <img width="815" height="578" alt="image" src="https://github.com/user-attachments/assets/b0c2856c-08ee-494a-bdd6-9d3f19d86f2f" />
       
-      El método `ParticleFactory::createParticle` decide que tipo de partícula crear a partir del parámetro `type`
+      El método `ParticleFactory::createParticle` decide que tipo de partícula crear a partir del parámetro `type`.
       
     - ¿Qué información necesita el método fábrica para realizar su trabajo?
+
+      Necesita un string (`type`) que indica el tipo de partícula a crear.
       
     - ¿Qué devuelve si se le pasa un tipo desconocido? ¿Cómo podrías mejorar esto?
+  
+      Devuelve una `Particle` por defecto, se podría mejorar arrojando error si es de un tipo desconocido.
       
 3. **Uso de Factory:**
    
@@ -35,3 +39,5 @@
       <img width="721" height="559" alt="image" src="https://github.com/user-attachments/assets/51f257a0-9c41-45c9-887e-7c7d578d65e9" />
       
     - Compara esto con la alternativa: ¿Cómo se vería `ofApp::setup` si *no* usara la fábrica y tuviera que crear y configurar cada tipo de partícula (`star`, `shooting_star`, `planet`) directamente usando `new Particle()` y luego ajustando sus propiedades (`size`, `color`, `velocity`)?
+  
+      Si no usara la fábrica, `ofApp::setup` tendría que crear cada partícula con `new Particle()` y luego configurar manualmente sus propiedades.
