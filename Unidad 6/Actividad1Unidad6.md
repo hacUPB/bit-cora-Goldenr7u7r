@@ -40,3 +40,4 @@
 
 4. ¿Qué crees que está pasando “detrás de cámaras” cuando presionas las teclas? Formula una hipótesis inicial sobre cómo la aplicación cambia el comportamiento de las partículas.
 
+Cuando presiono una tecla, la aplicación no cambia directamente la posición de cada partícula desde `keyPressed`, sino que envía un evento general (`"stop"`, `"attract"`, `"repel"` o `"normal"`). Luego, cada partícula recibe ese evento y cambia su estado interno. Ese nuevo estado es el que modifica la forma en que la partícula se actualiza en cada frame.
