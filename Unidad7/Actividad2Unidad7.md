@@ -2,7 +2,7 @@
 
 # **¿Cómo se crea un proyecto OpenGL en Windows?**
 
-Para hacer que OpenGL funcione en Windows no es solo escribir el código y ya. Se necesitan varias cosas conectadas. GLFW es la biblioteca que me permite crear la ventana del programa y manejar cosas como el teclado y el mouse. También ayuda a crear el contexto de OpenGL, que básicamente es lo que permite que OpenGL pueda dibujar dentro de esa ventana.
+GLFW es la biblioteca que me permite crear la ventana del programa y manejar cosas como el teclado y el mouse. También ayuda a crear el contexto de OpenGL, que básicamente es lo que permite que OpenGL pueda dibujar dentro de esa ventana.
 
 opengl32.lib es una biblioteca que ya viene con Windows. Sirve para que el proyecto pueda iniciar OpenGL, pero solo trae funciones muy básicas y antiguas. Por eso, para usar funciones modernas de OpenGL, entra GLAD, que se encarga de buscarlas y cargarlas desde los drivers de la GPU cuando el programa se está ejecutando.
 
