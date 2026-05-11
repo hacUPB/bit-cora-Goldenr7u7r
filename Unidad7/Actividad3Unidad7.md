@@ -1,4 +1,8 @@
-## Primer "reporta en tu bitácora"
+# Actividad 3
+
+## Análisis del ejemplo del triángulo simple parte 1
+
+### Primer "reporta en tu bitácora"
 
 **Cambia los valores de bufferWidth y bufferHeight: divide por 2**
 
@@ -32,7 +36,7 @@ Al principio pensé que esto cambiaba el tamaño de la ventana, pero realmente n
 
 También noté que al agrandar la ventana el triángulo podía volver a aparecer, pero su tamaño no cambiaba tanto como esperaba, porque el triángulo no está hecho directamente en píxeles, sino en coordenadas que OpenGL adapta al viewport.
 
-## Segundo  "reporta en tu bitácora"
+### Segundo  "reporta en tu bitácora"
 
 Hasta ahora entendí que `GLFW` sirve para crear la ventana del programa y manejar eventos como teclado o mouse. Sin eso, OpenGL no tendría dónde mostrar lo que dibuja.
 
@@ -46,7 +50,7 @@ El viewport es la parte del framebuffer donde se va a dibujar. Por eso, cuando c
 
 Creo que el triángulo se seguiría dibujando, pero solo dentro de una parte de la ventana. La ventana seguiría del mismo tamaño, pero el espacio visible donde OpenGL dibuja sería más pequeño. Esto sirve para comprobar que el viewport controla la zona de dibujo, no el tamaño real de la ventana.
 
-## Tercer "reporta en tu bitácora"
+### Tercer "reporta en tu bitácora"
 
 **Cambiar el primer parámetro de glDrawArrays a GL_LINES**
 
@@ -90,7 +94,7 @@ Cambié el tercer parámetro a 4 y el triángulo sí se vio, pero realmente mi f
 
 Pasa porque ese tercer parámetro le dice a OpenGL cuántos vértices debe leer. Como puse 4, OpenGL intenta leer un vértice extra que yo no definí. 
 
-## Cuarto "reporta en tu bitácora"
+### Cuarto "reporta en tu bitácora"
 
   **1. ¿Qué es el contexto OpenGL?**
 
